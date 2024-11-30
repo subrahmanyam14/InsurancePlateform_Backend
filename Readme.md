@@ -1,4 +1,4 @@
-You can find the documentation related to the controllers and security configurations in the docs folder. And also i am attaching the postman collection link here: https://api.postman.com/collections/34680252-6fec3707-08a7-4531-840c-e7a2bb9d59c4?access_key=PMAT-01JDY8MG5HD8GSBJZMG96MFR38
+You can find the documentation related to the controllers and security configurations in the docs folder. And also i am attaching the postman collection link here: 
 
 
 1. Authentication (JWT-based):
