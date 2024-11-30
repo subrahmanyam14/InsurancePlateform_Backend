@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learner.dto.ForgotPasswordReq;
@@ -24,11 +24,12 @@ public class OtpController {
 	@Autowired
 	private OtpService otpService;
 	
+
 	@PostMapping("/generate/{email}")
 	public ResponseEntity<String > generateOpt(@PathVariable String email)
 	{
-		String otp = otpService.generateOtp(email);
-		return ResponseEntity.ok(otp);
+		otpService.generateOtp(email);
+		return ResponseEntity.ok("Email sent with OTP successfully.");
 
 	}
 	

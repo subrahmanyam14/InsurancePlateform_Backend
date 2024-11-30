@@ -12,7 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -108,7 +107,7 @@ public class UserController {
 		userInfoService.changePassword(email, req);
 		return new ResponseEntity<>("Your Password Successfully reset.", HttpStatus.ACCEPTED);
 	}
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/admin/add-admin")
 	public ResponseEntity<UserInfoDto> addAdmin(@RequestBody UserInfoDto req)
 	{
@@ -121,7 +120,7 @@ public class UserController {
 	{
 		return new ResponseEntity<>(userInfoService.saveAdmin(req), HttpStatus.ACCEPTED);
 	}
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin/get-all-users")
 	public ResponseEntity<List<UserInfoDto>> getAllUsers()
 	{

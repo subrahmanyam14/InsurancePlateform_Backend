@@ -41,7 +41,7 @@ public class SecurityConfig {
 	{
 		return http.csrf().disable().cors()
 				.and().authorizeHttpRequests()
-				.requestMatchers("/user/register", "/user/login", "/otp/verify", "/otp/generate/**")
+				.requestMatchers("/user/register", "/user/login", "/otp/verify", "/otp/generate/**", "/test/**")
 				.permitAll().and().authorizeHttpRequests()
 				.requestMatchers("/policy/get-all-policies")
 				.permitAll().and()
